@@ -1,2 +1,0 @@
-# Supermarket
-Flask Project
