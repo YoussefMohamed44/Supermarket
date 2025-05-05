@@ -1,0 +1,190 @@
+.signup-page-title{
+    font-family: Arial;
+    text-align: center;
+    color: rgb(0, 153, 51);
+    margin-top: 45px;
+    font-weight: bold;
+    }
+
+    .footer {
+        text-align:center;
+        padding: 20px;
+    }
+    
+    * {box-sizing: border-box}
+
+
+.container {
+  padding: 16px;
+}
+
+
+input[type=text], input[type=password], input[type=tel] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  background: #ededed;
+  border: none;
+  border-radius: 0;
+  border-color: #000000;
+}
+
+input[type=text]:focus, input[type=password]:focus,input[type=tel]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.registerbtn {
+  background-color: rgb(0, 153, 51);
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 25px;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+
+a {
+  color: rgb(0, 153, 51);
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.head{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(0, 153, 51);
+  padding: 10px;
+  color: aliceblue;
+}
+
+.url-for-signin{
+  color: rgb(0, 153, 51);
+  border-color: rgb(0, 153, 51);
+}
+.branding-navbar{
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  background: #faf9f8;
+}
+
+.container {
+  background: #fff;
+  border: 1px solid #666;
+  border-radius: 5px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 950px;
+  margin: 60px auto 0 auto;
+}
+
+legend {
+  color: rgb(0, 153, 51);
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.form-group label,
+.form-control-label {
+  color: rgb(0, 153, 51);
+  font-weight: 500;
+}
+
+.form-control,
+.form-control:focus {
+  background: #f3f3f3;
+  color: #333;
+  border: 1px solid #666;
+  border-radius: 0;
+  font-size: 1.2rem;
+
+  margin-bottom: 0.7rem;
+  transition: background 0.2s;
+  padding-left: 1.3rem;
+}
+
+.btn, .btn-outline-info {
+  background: rgb(0, 153, 51) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 5px;
+  font-weight: 500;
+  padding: 0.45rem 1.65rem;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: background 0.18s;
+}
+.btn:hover, .btn-outline-info:hover, .btn:focus, .btn-outline-info:focus {
+  background: rgb(0, 153, 51) !important;
+  color: #fff;
+}
+
+.form-check-input {
+  accent-color: rgb(0, 153, 51);
+  margin-top: 0.1rem;
+}
+.form-check-label, .form-check-input-label {
+  color: rgb(0, 153, 51);
+}
+
+.small, small {
+  color: #555 !important;
+  margin-top: 1.1rem;
+}
+
+.text-muted {
+  color: #888 !important;
+}
+
+small.text-muted .ml-2 {
+  color: #000 !important;
+  font-weight: 500;
+  text-decoration: underline;
+}
+small.text-muted .ml-2:hover {
+  color: rgb(0, 153, 51) !important;
+}
+
+a, a:visited {
+  color: rgb(0, 153, 51);
+  text-decoration: underline;
+}
+
+.invalid-feedback span {
+  color: rgb(0, 153, 51);
+  font-weight: bold;
+}

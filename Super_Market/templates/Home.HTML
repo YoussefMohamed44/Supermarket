@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{%block head%}
+
+<link rel="stylesheet" href="/static/css/home.css">
+
+{% endblock %}
+
+{% block content%}
+
+    <div class="home-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Whole Foods Super Market</h1>
+            <p style="color: white;">Fresh. Local. Sustainable.</p>
+            <!-- HERE -->
+        </div>
+    </div>
+
+    <div class="featured-categories">
+        <h2>Explore Our Sections</h2>
+        <div class="category-grid">
+            <div class="category-item">
+                <img src="/static/images/Farmtotable.jpg" alt="Fresh Produce">
+                <h3>Fresh Produce</h3>
+                <p>Farm-to-table goodness</p>
+            </div>
+            <div class="category-item">
+                <img src="/static/images/organic_products.jpg" alt="Organic Products">
+                <h3>Organic Selection</h3>
+                <p>100% Certified Organic</p>
+            </div>
+            <div class="category-item">
+                <img src="/static/images/locals.jpeg" alt="Local Products">
+                <h3>Local Favorites</h3>
+                <p>Supporting community farmers</p>
+            </div>
+            <div class="category-item">
+                <img src="/static/images/readymeals.jpg" alt="Healthy Meals">
+                <h3>Ready Meals</h3>
+                <p>Nutritious and delicious</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sustainability-section">
+        <div class="sustainability-content">
+            <h2>Our Commitment to Sustainability</h2>
+            <p>At Whole Foods Super Market, we believe in more than just selling groceries. We're committed to reducing our environmental footprint, supporting local farmers, and providing the healthiest options for our community.</p>
+            <ul class="sustainability-points">
+                <li>🌱 Zero-waste packaging</li>
+                <li>♻️ Carbon-neutral operations</li>
+                <li>🚜 Direct partnerships with local farms</li>
+                <li>🌍 Eco-friendly practices</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{%endblock%}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} About {% endblock %}
+
+{%block head%} 
+
+<link rel="stylesheet" href="/static/css/About.css">
+<link rel="stylesheet" href="/static/css/home.css">
+
+{% endblock %}
+
+{% block content%}
+    <div class="about-hero">
+        <div class="hero-content">
+            <h1>Whole Foods Super Market</h1>
+            <p style="color: white;">Nourishing Communities, Cultivating Wellness</p>
+        </div>
+    </div>
+
+    <div class="about-story">
+        <div class="story-content">
+            <h2>Our Journey</h2>
+            <p>Founded with a vision to transform the way communities eat, Whole Foods Super Market is more than just a grocery store. We're a movement dedicated to bringing fresh, sustainable, and nutritious food to every table. Our story began with a simple belief: food should be wholesome, ethical, and accessible to all.</p>
+        </div>
+        <div class="story-image">
+            <img src="/static/images/interior.jpg" alt="Whole Foods Market Interior">
+        </div>
+    </div>
+
+    <div class="mission-values">
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>To provide high-quality, locally sourced, and organic products that support the health and well-being of our customers while promoting sustainable agricultural practices and supporting local farmers.</p>
+        </div>
+        <div class="values">
+            <h2>Our Core Values</h2>
+            <ul>
+                <li>🌱 Sustainability</li>
+                <li>🤝 Community Support</li>
+                <li>🌈 Diversity and Inclusion</li>
+                <li>💚 Health and Wellness</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="features-container">
+        <div class="feature-box">
+            <h3>🚚 Local Delivery</h3>
+            <p>Free delivery within 10 miles</p>
+        </div>
+        <div class="feature-box">
+            <h3>🌿 Organic Selection</h3>
+            <p>100% Certified Organic Produce</p>
+        </div>
+        <div class="feature-box">
+            <h3>♻️ Eco-Friendly</h3>
+            <p>Zero Waste Packaging</p>
+        </div>
+        <div class="feature-box">
+            <h3>🤗 Community Support</h3>
+            <p>Supporting Local Farmers</p>
+        </div>
+    </div>
+{%endblock%}
