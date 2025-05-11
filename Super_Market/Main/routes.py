@@ -1,6 +1,6 @@
 from Super_Market.Main import main
 
-# from Super_Market.models import Product
+from Super_Market.models import Product
 from Super_Market import bcrypt, db
 from flask import Flask, render_template, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
@@ -18,7 +18,7 @@ def Home():
 def about():
     return render_template('About.HTML', title = "About", cssFile = "Static/css/About.css")
 
-# @main.route("/Shop")
-# def Shop():
-#     products = Product.query.all()
-#     return render_template('Shop.html', products=products)
+@main.route("/Shop")
+def Shop():
+    products = Product.query.all()
+    return render_template('Shop.html', products=products)

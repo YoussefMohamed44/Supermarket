@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %} Cart {% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Cart.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container cart-container">
+    <div class="cart-header">
+        <h1>
+            <i class="fas fa-shopping-cart"></i> Your Cart 
+
+        </h1>
+    </div>
+
+    {% if cart_items and cart_items|length > 0 %}
+    <div class="cart-content">
+        <div class="cart-items">
+            {% for item in cart_items %}
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
+                </div>
+                <div class="cart-item-details">
+                    <h3>{{ item.product.name }}</h3>
+                    <p>{{ item.product.description or 'No description' }}</p>
+                    <div class="cart-item-price">
+                        <span class="price">${{ "%.2f"|format(item.product.price) }}</span>
+                        <span class="quantity">Quantity: {{ item.quantity }}</span>
+                        <span class="total-price">${{ "%.2f"|format(item.product.price * item.quantity) }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="cart-summary">
+            <div class="summary-header">
+                <h2>Order Summary</h2>
+                <form method="POST" action="{{ url_for('cart.clear_cart') }}">
+                    <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Clear your cart?')">
+                        Clear Cart
+                    </button>
+                </form>
+            </div>
+            <div class="summary-details">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>${{ "%.2f"|format(total) }}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (10%)</span>
+                    <span>${{ "%.2f"|format(total * 0.1) }}</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>${{ "%.2f"|format(total * 1.1) }}</span>
+                </div>
+            </div>
+            <div class="checkout-actions">
+                {% if total > 0 %}
+                <a href="https://www.paypal.me/hakeem4reall/{{ '%.2f'|format(total * 1.1) }}" class="btn btn-success btn-lg" target="_blank">
+                    <i class="fab fa-paypal"></i> Checkout with PayPal
+                </a>
+                {% else %}
+                <a href="https://www.paypal.me/hakeem4reall" class="btn btn-success btn-lg" target="_blank">
+                    <i class="fab fa-paypal"></i> Checkout with PayPal
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="empty-cart">
+        <i class="fas fa-shopping-basket"></i>
+        <h2>Your cart is empty</h2>
+        <p>Looks like you haven't added any items to your cart yet.</p>
+        <a href="{{ url_for('main.Shop') }}" class="btn btn-primary">Continue Shopping</a>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+function updateQuantity(itemId, change) {
+    // Placeholder for AJAX quantity update
+    console.log(`Update item ${itemId} quantity by ${change}`);
+}
+
+function removeItem(itemId) {
+    // Placeholder for AJAX item removal
+    console.log(`Remove item ${itemId}`);
+}
+</script>
+{% endblock %}

@@ -23,7 +23,7 @@
         <div class="site-header-content">
             <h1>Whole Foods Market</h1>
             <p style="color: white;">Fresh, organic, sustainable.</p>
-            <!-- HERE -->
+            <a href="{{ url_for('main.Shop') }}" class="header-cta">Shop Now</a>
         </div>
     </header>
 
@@ -46,7 +46,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <!-- HERE -->
+                        <a class="nav-link" href="{{ url_for('main.Shop') }}">
                             <i class="fas fa-shopping-bag"></i> Shop
                         </a>
                     </li>
@@ -57,7 +57,7 @@
                     </li>
                     {% if current_user.is_authenticated %}
                     <li class="nav-item">
-                        <!-- HERE -->
+                        <a class="nav-link" href="{{ url_for('cart.CartPage') }}">
                             <i class="fas fa-shopping-cart"></i> Cart
                         </a>
                     </li>
@@ -68,14 +68,14 @@
                                 <i class="fas fa-user"></i> {{ current_user.username }}
                             </a>
                             <ul class="dropdown-menu">
-                                <!-- HERE -->
+                                <li><a class="dropdown-item" href="{{ url_for('Reviews.reviews') }}">
                                     <i class="fas fa-comment"></i> Reviews
                                 </a></li>
                                 <li><a class="dropdown-item" href="{{ url_for('users.logout') }}">Sign out</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <!-- HERE -->
+                            <a class="nav-link" href="{{ url_for('cart.CartPage') }}">Cart</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
@@ -109,7 +109,7 @@
           <p style="margin: 0; font-size: 1.1rem; color: white;">Whole Foods</p>
           <nav style="margin-top: 10px;">
               <a href="{{ url_for('main.Home') }}" style="color: #ecf0f1; margin: 0 15px; text-decoration: none;">Home</a>
-              <!-- HERE -->
+              <a href="{{ url_for('main.Shop') }}" style="color: #ecf0f1; margin: 0 15px; text-decoration: none;">Shop</a>
               <a href="{{ url_for('main.about') }}" style="color: #ecf0f1; margin: 0 15px; text-decoration: none;">About</a>
           </nav>
           <hr>

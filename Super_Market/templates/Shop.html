@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Shop {% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Shop.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="shopping-page-main-div">
+
+  {% for product in products %}
+    <div class="product">
+      <div class="product-photo">
+        <img src="{{ product.image_url or '' }}" alt="Product Photo" width="150" height="150">
+      </div>
+      <h6 class="product-name">{{ product.name }}</h6>
+      <p class="product-description">{{ product.description }}</p>
+      <p class="product-description">${{ product.price }}</p>
+
+      {% if current_user.is_authenticated %}
+      <a href="{{ url_for('cart.add_to_cart', product_id=product.id) }}">
+        <button class="add-to-cart-btn">Add to cart</button>
+      </a>
+      {% else %}
+      <a href="{{ url_for('users.login') }}">
+        <button class="add-to-cart-btn" title="Please log in to add items to cart">Add to cart</button>
+      </a>
+      {% endif %}
+      
+    </div>
+  {% endfor %}
+
+</div>
+{% endblock %}
