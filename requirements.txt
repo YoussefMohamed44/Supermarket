@@ -4,3 +4,16 @@ flask-wtf
 flask-login
 flask-bcrypt 
 email_validator 
+
+# Testing / CI
+pytest
+pytest-cov
+pytest-xdist
+coverage
+selenium
+webdriver-manager
+pytest-json-report
+pytest-html
+
+# Optional: add test helpers as needed
+requests

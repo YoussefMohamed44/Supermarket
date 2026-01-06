@@ -1,4 +1,5 @@
 from flask import Flask
+import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -6,14 +7,15 @@ from flask_login import LoginManager
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '123 456 789'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Orders.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('TEST_DATABASE_URI', 'sqlite:///Orders.db')
+print(f" * Database used: {app.config['SQLALCHEMY_DATABASE_URI']}") # Debug print
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = 'login'
+login_manager.login_view = 'users.login'
 
 
 def init_db():
@@ -42,7 +44,7 @@ def init_db():
             db.session.add_all(products)
             db.session.commit()
         
-init_db()
+# init_db()  <-- Removing this auto-call to prevent side effects on import
 
 # Import routes after initializing app to avoid circular imports
 import os
